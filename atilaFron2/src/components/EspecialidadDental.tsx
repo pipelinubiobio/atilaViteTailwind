@@ -4,7 +4,7 @@ function EspecialidadDental() {
   return (
     <BloqueEspecialidad
       titulo="Odontología"
-      imagen="/assets/dental.jpg"
+      imagen="/public/foto3.jpg"
       servicios={[
         'Limpieza dental',
         'Ortodoncia invisible',

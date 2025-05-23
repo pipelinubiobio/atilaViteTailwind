@@ -2,13 +2,14 @@ function HeroFrase() {
   return (
     <div className="w-full md:w-2/3 text-center md:text-left space-y-4 max-w-2xl">
       <span className="uppercase tracking-wide text-sm font-semibold text-white/80">
-        Sucursales de MiClínica
+        Sucursal Atila Centro Medico Concepcion
       </span>
-      <h1 className="text-4xl md:text-5xl font-extrabold leading-tight">
-        Una clínica dental<br />para devolver sonrisas
+      <h1 className="text-4xl md:text-6xl font-extrabold leading-tight">
+        Somos salud 
+        <br />Con propósito social
       </h1>
       <p className="text-lg text-white/90">
-        Somos una clínica dental que ofrece atención especializada al mejor precio.
+        Atención especializada al mejor precio.
       </p>
       <a
         href="#servicios"

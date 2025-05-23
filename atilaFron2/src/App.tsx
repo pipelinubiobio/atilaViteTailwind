@@ -1,5 +1,7 @@
 import Navbar from './components/Navbar'
 
+import HeroSection from './components/HeroSection'
+
 function App() {
   return (
     <div className="bg-white text-gray-800">
@@ -7,12 +9,13 @@ function App() {
       <Navbar />
 
       {/* Contenido principal */}
-      <main className="pt-16">
+      <main className="pt-0">
         <section
           id="inicio"
           className="min-h-screen flex items-center justify-center bg-gray-50"
         >
-          <h2 className="text-3xl font-bold">Inicio</h2>
+          <HeroSection />
+
         </section>
 
         <section

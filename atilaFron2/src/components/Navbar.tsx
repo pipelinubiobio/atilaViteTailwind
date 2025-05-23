@@ -90,7 +90,7 @@ function Navbar() {
           {/* DERECHA - ICONOS */}
           <div className="flex items-center justify-end gap-3 flex-[1_1_0%] min-w-0">
             <a
-              href="https://wa.me/56912345678"
+              href="https://wa.me/56984085589"
               target="_blank"
               rel="noopener noreferrer"
               className="text-green-500 hover:scale-110 transition-transform"
@@ -99,7 +99,7 @@ function Navbar() {
               <FaWhatsapp size={60} />
             </a>
             <a
-              href="https://instagram.com/tuclinica"
+              href="https://instagram.com/atila_centromedico"
               target="_blank"
               rel="noopener noreferrer"
               className="text-pink-500 hover:scale-110 transition-transform"

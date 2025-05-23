@@ -1,6 +1,7 @@
 import EspecialidadDental from './EspecialidadDental'
 import EspecialidadEstetica from './EspecialidadEstetica'
 import EspecialidadKinesiologia from './EspecialidadKinesiologia'
+import EspecialidadPsicologia from './EspecialidadPsicologia'
 
 function ServiciosSection() {
   return (
@@ -8,6 +9,7 @@ function ServiciosSection() {
       <EspecialidadDental />
       <EspecialidadEstetica />
       <EspecialidadKinesiologia />
+      <EspecialidadPsicologia/>
     </section>
   )
 }

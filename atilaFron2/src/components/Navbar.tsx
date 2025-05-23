@@ -1,6 +1,9 @@
 import { useEffect, useRef, useState } from 'react'
 import { FaWhatsapp, FaInstagram } from 'react-icons/fa'
 
+import LogoAtila from '../assets/LogoAtila.svg'
+
+
 import ModalHamburguesa from './ModalHamburguesa'
 import { navLinks } from '../constants/navLinks'
 
@@ -48,9 +51,13 @@ function Navbar() {
           className="max-w-7xl mx-auto h-full flex items-center justify-between gap-2"
         >
           {/* IZQUIERDA - LOGO */}
-          <div className="flex items-center justify-start flex-[1_1_0%] min-w-0">
-            <h1 className="text-base font-bold text-blue-600 whitespace-nowrap">MiClínica</h1>
-          </div>
+            <div className="flex items-center justify-start flex-[1_1_0%] min-w-0">
+                <img
+                    src={LogoAtila}
+                    alt="Logo de la clínica"
+                    className="h-10 w-auto object-contain"
+                />
+            </div>
 
           {/* CENTRO - ACCIONES o BOTÓN */}
           <div className="flex items-center justify-center flex-[1_1_0%] min-w-0 overflow-hidden">

@@ -1,6 +1,7 @@
 import Navbar from './components/Navbar'
 
 import HeroSection from './components/HeroSection'
+import ServiciosSection from './components/ServiciosSection'
 
 function App() {
   return (
@@ -22,7 +23,7 @@ function App() {
           id="servicios"
           className="min-h-screen flex items-center justify-center bg-white"
         >
-          <h2 className="text-3xl font-bold">Nuestros Servicios</h2>
+          <ServiciosSection />
         </section>
 
         <section

@@ -45,7 +45,8 @@ function Navbar() {
 
   return (
     <>
-      <header className="fixed top-0 left-0 w-full bg-white shadow-md z-50 h-16 px-4">
+        {/* NavBar General H controla la altura (ancho vertical) */}
+      <header className="fixed top-0 left-0 w-full bg-white shadow-md z-50 h-30 px-4">
         <div
           ref={containerRef}
           className="max-w-7xl mx-auto h-full flex items-center justify-between gap-2"
@@ -55,7 +56,7 @@ function Navbar() {
                 <img
                     src={LogoAtila}
                     alt="Logo de la clínica"
-                    className="h-10 w-auto object-contain"
+                    className="h-20 w-auto object-contain"
                 />
             </div>
 
@@ -64,7 +65,7 @@ function Navbar() {
             {mostrarHamburguesa ? (
               <button
                 onClick={toggleModal}
-                className="text-gray-700 hover:text-blue-600 text-xl"
+                className="text-gray-700 hover:text-blue-600 text-5xl px-2 py-1"
               >
                 ☰
               </button>
@@ -95,7 +96,7 @@ function Navbar() {
               className="text-green-500 hover:scale-110 transition-transform"
               aria-label="WhatsApp"
             >
-              <FaWhatsapp size={24} />
+              <FaWhatsapp size={60} />
             </a>
             <a
               href="https://instagram.com/tuclinica"
@@ -104,7 +105,7 @@ function Navbar() {
               className="text-pink-500 hover:scale-110 transition-transform"
               aria-label="Instagram"
             >
-              <FaInstagram size={24} />
+              <FaInstagram size={60} />
             </a>
           </div>
         </div>

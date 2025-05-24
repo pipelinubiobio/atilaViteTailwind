@@ -12,6 +12,7 @@ function BurbujaServicio({ nombre, descripcion }: Props) {
     <button
       onClick={() => setAbierta(!abierta)}
       className={`
+        flotar
         transition-all duration-300 rounded-full
         text-white px-6 py-4
         ${abierta ? 'w-64 h-64 text-base p-6 bg-sky-600' : 'w-32 h-32 text-sm bg-sky-400'}

@@ -1,7 +1,7 @@
 import Navbar from './components/Navbar'
 
 import HeroSection from './components/HeroSection'
-import ServiciosSection from './components/ServiciosSection'
+import ServiciosSection from './components/especialidadesComp/ServiciosSection'
 
 function App() {
   return (

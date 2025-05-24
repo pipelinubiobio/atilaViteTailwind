@@ -1,3 +1,4 @@
+import TituloEspecialidad from './TituloEspecialidad'
 import BurbujaServicio from './BurbujaServicio'
 
 function EspecialidadDental() {
@@ -22,11 +23,10 @@ function EspecialidadDental() {
 
   return (
     <div className="max-w-7xl mx-auto px-6 py-16">
-      {/* Título de la sección */}
-      <h2 className="text-4xl font-bold text-sky-700 mb-12 text-center">
-        Odontología
-      </h2>
+      {/* Título con banner */}
+      <TituloEspecialidad titulo="Odontología" />
 
+      {/* Contenido en tercios */}
       <div className="flex flex-col md:flex-row gap-10 items-center">
         {/* Imagen */}
         <div className="w-full md:w-1/3 flex justify-center">
@@ -37,7 +37,7 @@ function EspecialidadDental() {
           />
         </div>
 
-        {/* Burbujas */}
+        {/* Burbujas interactivas */}
         <div className="w-full md:w-2/3 flex flex-wrap gap-6 justify-center md:justify-start">
           {servicios.map((s, i) => (
             <BurbujaServicio

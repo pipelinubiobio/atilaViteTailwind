@@ -1,20 +1,30 @@
+import { useEffect, useState } from 'react'
+
 interface Props {
   titulo: string
   invertir?: boolean
 }
 
 function TituloEspecialidad({ titulo, invertir = false }: Props) {
+  const [visible, setVisible] = useState(false)
+
+  useEffect(() => {
+    const timeout = setTimeout(() => setVisible(true), 50)
+    return () => clearTimeout(timeout)
+  }, [])
+
   return (
-    <div className={`relative w-full mb-10 ${invertir ? 'text-right' : 'text-left'}`}>
+    <div className="relative w-full mb-12">
       <div
         className={`
-          relative inline-block bg-sky-600 text-white py-3 px-8 text-2xl font-bold shadow-md
-          ${invertir ? 'rounded-r-none' : 'rounded-l-none'}
+          w-full py-6 px-10 text-white text-4xl font-extrabold tracking-wide rounded-md
+          bg-gradient-to-r from-sky-700 via-sky-500 to-sky-400 shadow-lg
+          transition-opacity duration-1000 ease-out
+          ${invertir ? 'text-right bg-gradient-to-l' : 'text-left'}
+          ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2'}
         `}
         style={{
-          clipPath: invertir
-            ? 'polygon(0 0, 100% 0, 100% 100%, 0 100%, 20px 50%)'
-            : 'polygon(0 0, 100% 0, calc(100% - 20px) 50%, 100% 100%, 0 100%)',
+          transform: 'translateY(0)',
         }}
       >
         {titulo}

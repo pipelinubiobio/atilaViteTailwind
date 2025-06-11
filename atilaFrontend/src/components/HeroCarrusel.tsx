@@ -18,7 +18,7 @@ function HeroCarrusel() {
               <img
                 src={src}
                 alt={`Slide ${i + 1}`}
-                className="h-[30rem]  object-cover rounded-full shadow-md"
+                className="h-[30rem] object-cover rounded-full shadow-md"
               />
             </div>
           ))}

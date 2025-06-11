@@ -3,7 +3,6 @@ import { FaWhatsapp, FaInstagram } from 'react-icons/fa'
 
 import LogoAtila from '../assets/LogoAtila.svg'
 
-
 import ModalHamburguesa from './ModalHamburguesa'
 import { navLinks } from '../constants/navLinks'
 
@@ -45,20 +44,19 @@ function Navbar() {
 
   return (
     <>
-        {/* NavBar General H controla la altura (ancho vertical) */}
       <header className="fixed top-0 left-0 w-full bg-white shadow-md z-50 h-30 px-4">
         <div
           ref={containerRef}
           className="max-w-7xl mx-auto h-full flex items-center justify-between gap-2"
         >
           {/* IZQUIERDA - LOGO */}
-            <div className="flex items-center justify-start flex-[1_1_0%] min-w-0">
-                <img
-                    src={LogoAtila}
-                    alt="Logo de la clínica"
-                    className="h-20 w-auto object-contain"
-                />
-            </div>
+          <div className="flex items-center justify-start flex-[1_1_0%] min-w-0">
+              <img
+                  src={LogoAtila}
+                  alt="Logo de la clínica"
+                  className="h-20 w-auto object-contain"
+              />
+          </div>
 
           {/* CENTRO - ACCIONES o BOTÓN */}
           <div className="flex items-center justify-center flex-[1_1_0%] min-w-0 overflow-hidden">

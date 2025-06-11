@@ -1,4 +1,3 @@
-// src/components/ModalHamburguesa.tsx
 import React from 'react'
 
 import { navLinks } from '../constants/navLinks'

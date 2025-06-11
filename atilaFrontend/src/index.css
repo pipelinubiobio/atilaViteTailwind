@@ -1,9 +1,16 @@
 @import "tailwindcss";
 
-html {
-  scroll-behavior: smooth;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+html, body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth; /* Esto asegura el desplazamiento suave */
 }
 
+/* Animación de flotación */
 @keyframes flotar {
   0%, 100% {
     transform: translateY(0);
@@ -15,4 +22,15 @@ html {
 
 .flotar {
   animation: flotar 3s ease-in-out infinite;
+}
+
+/* Resto de estilos */
+h1, h2, h3 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700; /* Títulos más fuertes */
+}
+
+p, a, .burbuja-texto {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400; /* Peso normal */
 }

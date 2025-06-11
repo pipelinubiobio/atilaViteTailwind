@@ -19,7 +19,7 @@ function EspecialidadConBurbujas({ titulo, imagen, servicios, invertir = false }
 
       <div className={`flex flex-col md:flex-row gap-10 items-center ${invertir ? 'md:flex-row-reverse' : ''}`}>
         {/* Imagen */}
-        <div className="w-full md:w-1/3 flex justify-center">
+        <div className="w-full md:w-2/4 flex justify-center">
           <img
             src={imagen}
             alt={titulo}
@@ -28,7 +28,7 @@ function EspecialidadConBurbujas({ titulo, imagen, servicios, invertir = false }
         </div>
 
         {/* Burbujas */}
-        <div className="w-full md:w-2/3 flex flex-wrap gap-6 justify-center md:justify-start">
+        <div className="w-full md:w-2/4 flex flex-wrap gap-6 justify-center md:justify-start">
           {servicios.map((s, i) => (
             <BurbujaServicio
               key={i}

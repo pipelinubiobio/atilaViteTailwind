@@ -44,7 +44,7 @@ function Navbar() {
 
   return (
     <>
-      <header className="fixed top-0 left-0 w-full bg-white shadow-md z-50 h-30 px-4">
+      <header className="fixed top-0 left-0 w-full bg-white shadow-md z-50 h-25 px-4">
         <div
           ref={containerRef}
           className="max-w-7xl mx-auto h-full flex items-center justify-between gap-2"

@@ -44,16 +44,16 @@ function EspecialidadDental() {
 
       <div className="flex flex-col md:flex-row gap-10 items-center">
         {/* Imagen */}
-        <div className="w-full md:w-1/3 flex justify-center">
+        <div className="w-full md:w-2/4 flex justify-center">
           <img
-            src="/foto3.jpg"
+            src="/foto3_54.jpg"
             alt="Odontología"
             className="rounded-xl shadow-lg h-[30rem] object-cover"
           />
         </div>
 
         {/* Burbujas */}
-        <div className="w-full md:w-2/3 flex flex-wrap gap-6 justify-center md:justify-start">
+        <div className="w-full md:w-2/4 flex flex-wrap gap-6 justify-center md:justify-start">
           {!activa &&
             (Object.keys(categorias) as CategoriaClave[]).map((cat) => (
               <BurbujaMadre

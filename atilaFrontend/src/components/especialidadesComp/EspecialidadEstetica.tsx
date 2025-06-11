@@ -4,7 +4,7 @@ function EspecialidadEstetica() {
   return (
     <EspecialidadConBurbujas
       titulo="Medicina Estética Facial"
-      imagen="/foto1.jpg"
+      imagen="/foto1_54.jpg"
       invertir
       servicios={[
         { nombre: 'Limpieza facial profunda', descripcion: 'Remueve impurezas y mejora la textura de la piel.' },

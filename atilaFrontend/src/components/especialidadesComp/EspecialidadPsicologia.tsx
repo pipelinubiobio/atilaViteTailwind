@@ -4,7 +4,7 @@ function EspecialidadPsicologia() {
   return (
     <EspecialidadConBurbujas
       titulo="Psicología"
-      imagen="/psicologia.jpg"
+      imagen="/foto4_54.jpg"
       invertir
       servicios={[
         { nombre: 'Terapia individual', descripcion: 'Apoyo emocional y tratamiento psicológico personalizado.' },

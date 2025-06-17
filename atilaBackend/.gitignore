@@ -1,0 +1,28 @@
+# Node modules
+node_modules/
+
+# Logs
+logs/
+*.log
+
+# Entorno
+.env
+
+# Compilados
+dist/
+build/
+
+# Cobertura y caché
+coverage/
+.nyc_output/
+.cache/
+
+# Archivos temporales del sistema
+.DS_Store
+Thumbs.db
+
+# VSCode config
+.vscode/
+
+# TypeORM cache
+*.tsbuildinfo

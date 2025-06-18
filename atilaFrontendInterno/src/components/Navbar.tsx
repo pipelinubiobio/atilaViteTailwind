@@ -1,9 +1,8 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useAuth } from "../auth/AuthContext";
 
 export default function Navbar() {
   const { logout } = useAuth();
-  const navigate = useNavigate();
 
   return (
     <nav className="bg-white shadow-md py-4 px-6 flex justify-between items-center">

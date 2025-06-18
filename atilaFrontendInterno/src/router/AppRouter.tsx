@@ -4,6 +4,8 @@ import Home from "../pages/Home";
 import PrivateRoute from "../auth/PrivateRoute";
 import { AuthProvider } from "../auth/AuthContext";
 
+import Servicios from "../pages/Servicios";
+
 export default function AppRouter() {
   return (
     <BrowserRouter>
@@ -12,6 +14,7 @@ export default function AppRouter() {
           <Route path="/login" element={<Login />} />
           <Route path="/home" element={<PrivateRoute><Home /></PrivateRoute>} />
           <Route path="*" element={<Login />} />
+          <Route path="/servicios" element={<PrivateRoute><Servicios /></PrivateRoute>} />
         </Routes>
       </AuthProvider>
     </BrowserRouter>

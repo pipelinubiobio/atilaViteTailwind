@@ -1,11 +1,14 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:3000/api/auth"; // cambia esto si usás otro puerto o ruta
+const API_URL = import.meta.env.VITE_API_URL;
 
-export const loginService = async (data: { email: string; password: string }) => {
+export const loginService = async (credenciales: {
+  email: string;
+  password: string;
+}) => {
   try {
-    const res = await axios.post(`${API_URL}/login`, data);
-    return res.data?.data?.token ? { token: res.data.data.token } : {};
+    const response = await axios.post(`${API_URL}/auth/login`, credenciales);
+    return response.data;
   } catch (error) {
     console.error("Error al iniciar sesión:", error);
     return {};

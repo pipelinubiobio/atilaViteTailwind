@@ -1,39 +1,78 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:3000/api/servicios"; // tu endpoint base
+const API_URL = import.meta.env.VITE_API_URL;
 
-const getHeaders = () => {
+export interface Servicio {
+  id: number;
+  nombre: string;
+  descripcion: string;
+  precio: number;
+  activo: boolean;
+  createdAt?: string;
+  updatedAt?: string;
+}
+
+/**
+ * Genera los headers para las solicitudes HTTP, incluyendo el token y control de caché.
+ */
+const obtenerHeaders = () => {
   const token = sessionStorage.getItem("token");
   return {
     Authorization: `Bearer ${token}`,
-    "Content-Type": "application/json",
+    "Cache-Control": "no-cache",
+    Pragma: "no-cache",
+    Expires: "0",
   };
 };
 
-export const obtenerServicios = async () => {
-  const res = await axios.get(API_URL, {
-    headers: getHeaders(),
+/**
+ * Obtiene la lista de servicios desde la API.
+ */
+export const obtenerServicios = async (): Promise<Servicio[]> => {
+  const res = await axios.get(`${API_URL}/servicios/`, {
+    headers: obtenerHeaders(),
+  });
+  return res.data.data; // Se accede al array dentro del campo "data"
+};
+
+/**
+ * Crea un nuevo servicio en la base de datos.
+ * @param nuevo Objeto con los datos del nuevo servicio (sin id)
+ */
+export const crearServicio = async (
+  nuevo: Omit<Servicio, "id">
+): Promise<Servicio> => {
+  const res = await axios.post(`${API_URL}/servicios/`, nuevo, {
+    headers: obtenerHeaders(),
   });
   return res.data.data;
 };
 
-export const crearServicio = async (servicio: any) => {
-  const res = await axios.post(API_URL, servicio, {
-    headers: getHeaders(),
+const limpiarServicio = (servicio: Servicio): Omit<Servicio, "id" | "createdAt" | "updatedAt"> => {
+  const { id, createdAt, updatedAt, ...permitidos } = servicio;
+  return permitidos;
+};
+
+export const editarServicio = async (
+  id: number,
+  actualizado: Servicio
+): Promise<Servicio> => {
+  const limpio = limpiarServicio(actualizado);
+
+  const res = await axios.put(`${API_URL}/servicios/${id}/`, limpio, {
+    headers: obtenerHeaders(),
   });
+
   return res.data.data;
 };
 
-export const editarServicio = async (id: number, servicio: any) => {
-  const res = await axios.put(`${API_URL}/${id}`, servicio, {
-    headers: getHeaders(),
-  });
-  return res.data.data;
-};
 
-export const eliminarServicio = async (id: number) => {
-  const res = await axios.delete(`${API_URL}/${id}`, {
-    headers: getHeaders(),
+/**
+ * Elimina un servicio de la base de datos.
+ * @param id ID del servicio a eliminar
+ */
+export const eliminarServicio = async (id: number): Promise<void> => {
+  await axios.delete(`${API_URL}/servicios/${id}/`, {
+    headers: obtenerHeaders(),
   });
-  return res.data;
 };

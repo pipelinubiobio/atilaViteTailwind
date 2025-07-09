@@ -111,10 +111,10 @@ const handleSaveStatus = async (userId, status) => {
         <div className='top-table'>
         <h1 style={{ color: "white" }}>Todo el personal</h1>
           <button className="button button-primary" onClick={() => navigate('/add-mechanic')}>
-            Agregar Mecánico
+            Agregar Doctor
           </button>
           <button className="button button-primary" onClick={() => navigate('/add-seller')}>
-            Agregar Vendedor
+            Agregar Asistente
           </button>
             <div className='filter-actions'>
               <Search value={filterRut} onChange={handleRutFilterChange} placeholder={'Filtrar por rut'} />

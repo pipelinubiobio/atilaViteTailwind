@@ -460,7 +460,7 @@ const Inventario = () => {
         
         <div className="inv-container">
             
-            <h2 className="inv-title">Inventario</h2>
+            <h2 className="inv-title">Inventario e Insumos Médicos</h2>
             
             {/* Filtros de búsqueda */}
             <div className="inv-filters">

@@ -4,27 +4,22 @@ import '@styles/form.css';
 import HideIcon from '../assets/HideIcon.svg';
 import ViewIcon from '../assets/ViewIcon.svg';
 
-const Form = ({ title, fields, buttonText, onSubmit, footerContent, backgroundColor }) => {
+const Form = ({ title, fields, buttonText, onSubmit, footerContent }) => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const [showPassword, setShowPassword] = useState(false);
     const [showNewPassword, setShowNewPassword] = useState(false);
 
-    const togglePasswordVisibility = () => {
-        setShowPassword(!showPassword);
-    };
-
-    const toggleNewPasswordVisibility = () => {
-        setShowNewPassword(!showNewPassword);
-    };
-
-    const onFormSubmit = (data) => {
-        onSubmit(data);
-    };
+    const togglePasswordVisibility = () => setShowPassword(!showPassword);
+    const toggleNewPasswordVisibility = () => setShowNewPassword(!showNewPassword);
+    const onFormSubmit = (data) => onSubmit(data);
 
     return (
         <form
             className="form"
-            style={{ backgroundColor: backgroundColor }}
+            style={{
+                backgroundColor: '#007edc',
+                boxShadow: '0 8px 20px rgba(0, 0, 0, 0.1)'
+            }}
             onSubmit={handleSubmit(onFormSubmit)}
             autoComplete="off"
         >
@@ -32,6 +27,7 @@ const Form = ({ title, fields, buttonText, onSubmit, footerContent, backgroundCo
             {fields.map((field, index) => (
                 <div className="container_inputs" key={index}>
                     {field.label && <label htmlFor={field.name}>{field.label}</label>}
+                    
                     {field.fieldType === 'input' && (
                         <input
                             {...register(field.name, {
@@ -43,14 +39,17 @@ const Form = ({ title, fields, buttonText, onSubmit, footerContent, backgroundCo
                             })}
                             name={field.name}
                             placeholder={field.placeholder}
-                            type={field.type === 'password' && field.name === 'password' ? (showPassword ? 'text' : 'password') :
+                            type={
+                                field.type === 'password' && field.name === 'password' ? (showPassword ? 'text' : 'password') :
                                 field.type === 'password' && field.name === 'newPassword' ? (showNewPassword ? 'text' : 'password') :
-                                field.type}
+                                field.type
+                            }
                             defaultValue={field.defaultValue || ''}
                             disabled={field.disabled}
                             onChange={field.onChange}
                         />
                     )}
+
                     {field.fieldType === 'textarea' && (
                         <textarea
                             {...register(field.name, {
@@ -67,6 +66,7 @@ const Form = ({ title, fields, buttonText, onSubmit, footerContent, backgroundCo
                             onChange={field.onChange}
                         />
                     )}
+
                     {field.fieldType === 'select' && (
                         <select
                             {...register(field.name, {
@@ -79,28 +79,30 @@ const Form = ({ title, fields, buttonText, onSubmit, footerContent, backgroundCo
                             onChange={field.onChange}
                         >
                             <option value="">Seleccionar opción</option>
-                            {field.options && field.options.map((option, optIndex) => (
-                                <option className="options-class" key={optIndex} value={option.value}>
-                                    {option.label}
-                                </option>
+                            {field.options?.map((option, optIndex) => (
+                                <option key={optIndex} value={option.value}>{option.label}</option>
                             ))}
                         </select>
                     )}
+
                     {field.type === 'password' && field.name === 'password' && (
                         <span className="toggle-password-icon" onClick={togglePasswordVisibility}>
-                            <img src={showPassword ? ViewIcon : HideIcon} />
+                            <img src={showPassword ? ViewIcon : HideIcon} alt="toggle password" />
                         </span>
                     )}
+
                     {field.type === 'password' && field.name === 'newPassword' && (
                         <span className="toggle-password-icon" onClick={toggleNewPasswordVisibility}>
-                            <img src={showNewPassword ? ViewIcon : HideIcon} />
+                            <img src={showNewPassword ? ViewIcon : HideIcon} alt="toggle new password" />
                         </span>
                     )}
+
                     <div className={`error-message ${errors[field.name] || field.errorMessageData ? 'visible' : ''}`}>
                         {errors[field.name]?.message || field.errorMessageData || ''}
                     </div>
                 </div>
             ))}
+
             {buttonText && <button type="submit">{buttonText}</button>}
             {footerContent && <div className="footerContent">{footerContent}</div>}
         </form>

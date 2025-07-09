@@ -1,0 +1,348 @@
+body {
+    font-family: Montserrat, Poppins;
+    background-color: #003366;
+    margin: 0;
+    padding: 0;
+}
+
+.inv-container {
+    max-width: 90%;
+    margin: 140px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 30px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.inv-title {
+    text-align: center;
+    color: #333333;
+    margin-bottom: 20px;
+}
+
+.inv-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+}
+.inv-tr-header {
+    background-color: #003366;
+}
+
+.inv-th, .inv-td {
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 10px;
+}
+
+.inv-th {
+    background-color: #003366;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    
+}
+
+.inv-tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.inv-tr:hover {
+    background-color: #f1f1f1;
+}
+
+.inv-button {
+    display: block;
+    margin: 0 auto 20px auto;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.inv-button:hover {
+    background-color: #0056b3;
+}
+
+.inv-form {
+    background-color: #f8f8f8;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.inv-form-group {
+    margin-bottom: 15px;
+}
+
+.inv-label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333333;
+}
+
+.inv-input, .inv-select {
+    width: 55%;
+    padding: 8px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.inv-input:focus, .inv-select:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+.inv-add-button {
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    background-color: #003366;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.inv-add-button:hover {
+    background-color: #266e8b;
+}
+
+.inv-edit-button:hover {
+    background-color: #266e8b;
+}
+
+.inv-delete-button:hover {
+    background-color: #d9534f;
+}
+
+.inv-submit-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #003366;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.inv-submit-button:hover {
+    background-color: #0060c7;
+}
+
+.inv-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.inv-modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 400px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+.inv-modal-title {
+    margin-bottom: 15px;
+    font-size: 18px;
+    color: #333333;
+    text-align: center;
+}
+
+.inv-modal-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.inv-modal-save-button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-right: 10px;
+}
+
+.inv-modal-save-button:hover {
+    background-color: #0056b3;
+}
+
+.inv-modal-close-btn {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.inv-modal-close-btn:hover {
+    background-color: #c82333;
+}
+
+.estado-sin-stock {
+    background-color: #000;
+    color: #fff; /* Contraste para texto */
+}
+
+.estado-critico {
+    background-color: #c01616;
+    color: #fff; /* Contraste para texto */
+}
+
+.estado-muy-bajo {
+    background-color: #ff8400;
+    color: #000; /* Contraste para texto */
+}
+
+.estado-bajo {
+    background-color: #ffd500;
+    color: #000; /* Contraste para texto */
+}
+
+.estado-disponible {
+    background-color: #008000;
+    color: #fff; /* Contraste para texto */
+}
+
+.inv-edit-button {
+    background-color:  #003771;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.inv-delete-button {
+    margin-left: 10px;
+    background-color: #b20012;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.inv-save-button {
+    background-color: #003366;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.inv-button {
+    background-color: #003366;
+    border-radius: 15px;
+}
+
+.inv-button-marca {
+    background-color: #003366;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+}
+.inv-button-categoria {
+    background-color: #003366;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-left: 2%;
+}
+.inv-button-tipo {
+    background-color: #003366;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-left: 2%;
+}
+
+.inv-filters {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.inv-input-search {
+    padding: 10px;
+    width: 100%;
+    max-width: 400px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.inv-select-filter {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+
+.inv-botones-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+.inv-boton-central {
+    margin-bottom: 10px;
+}
+
+.inv-boton-linea {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 100%;
+}
+
+.inv-botones-izquierda {
+    display: flex;
+    gap: 10px;
+}
+
+
+.inv-botones-derecha {
+    display: flex;
+    gap: 10px; 
+}

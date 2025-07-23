@@ -41,7 +41,8 @@ const ServicioSchema = new EntitySchema({
       joinTable: {
         name: "servicios_convenios"
       },
-      cascade: true
+      cascade: true,
+       inverseSide: "servicios"
     }
   }
 });

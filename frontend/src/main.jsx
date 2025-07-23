@@ -13,6 +13,7 @@ import Inventario from '@pages/Inventario';
 
 import Servicios from '@pages/Servicio'; 
 
+import Convenios  from '@pages/Convenio';
 
 const router = createBrowserRouter([
   {
@@ -58,7 +59,17 @@ const router = createBrowserRouter([
           <Servicios />
         </ProtectedRoute>
       )
+    },
+    
+    {
+      path: '/Convenio',
+      element: (
+        <ProtectedRoute allowedRoles={['administrador']}>
+          <Convenios />
+        </ProtectedRoute>
+      )
     }
+
 
 
     ]

@@ -1,0 +1,232 @@
+/* servicio.css */
+
+.service-container {
+  background-color: #ffffff; /* fondo blanco general */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 40px 15px 60px;
+  color: #003366; /* azul oscuro navbar */
+  min-height: 100vh;
+
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 30px 25px;
+  
+   margin-top: 70px; /* margen superior para evitar superposición con navbar */
+
+  border-radius: 10px;
+  background-color: #00c0f0; /* celeste navbar */
+  box-shadow: 0 10px 25px rgba(0, 192, 240, 0.3);
+  color: #003366;
+}
+
+/* Header: título + botón */
+.service-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.service-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0;
+  color: #ffffff; /* texto blanco */
+}
+
+.service-add-button {
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+  padding: 10px 18px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: none;
+}
+
+.service-add-button:hover {
+  background-color: white;
+  color: #003366;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
+
+/* Listado de tarjetas */
+.service-card-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Tarjeta individual blanca */
+.service-card {
+  background-color: #ffffff; /* blanco */
+  padding: 20px 25px;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  color: #003366; /* texto azul oscuro */
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  position: relative;
+}
+
+.service-card-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 0 8px;
+  color: #007acc; /* azul medio */
+}
+
+/* Botón eliminar en tarjeta */
+.service-delete-button {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  background-color: #b3382d;
+  border: none;
+  padding: 7px 14px;
+  color: white;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 0.9rem;
+  box-shadow: 0 2px 6px rgba(179, 56, 45, 0.5);
+}
+
+.service-delete-button:hover {
+  background-color: #7f261f;
+}
+
+/* Mensaje cuando no hay datos */
+.service-no-data {
+  font-style: italic;
+  color: #707070;
+  text-align: center;
+  margin-top: 30px;
+  font-size: 1.1rem;
+}
+
+/* -------- MODAL ESTILOS -------- */
+
+.service-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.service-modal-content {
+  background: #ffffff;
+  padding: 25px 35px;
+  border-radius: 12px;
+  width: 400px;
+  max-width: 90vw;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #222;
+  position: relative;
+}
+
+.service-modal-title {
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #00c0f0;
+}
+
+.service-modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.service-modal-label {
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 6px;
+  color: #444;
+}
+
+.service-modal-input,
+.service-modal-textarea {
+  width: 100%;
+  padding: 8px 12px;
+  font-size: 1rem;
+  border: 1.5px solid #ccc;
+  border-radius: 6px;
+  transition: border-color 0.3s ease;
+  font-family: inherit;
+}
+
+.service-modal-input:focus,
+.service-modal-textarea:focus {
+  border-color: #00c0f0;
+  outline: none;
+  background-color: #e6f9ff;
+}
+
+.service-modal-textarea {
+  min-height: 60px;
+  resize: vertical;
+}
+
+.service-modal-checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  color: #444;
+  cursor: pointer;
+}
+
+.service-modal-checkbox {
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
+}
+
+.service-modal-submit-btn {
+  background-color: #00c0f0;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  box-shadow: 0 4px 10px rgba(0,192,240,0.6);
+}
+
+.service-modal-submit-btn:hover {
+  background-color: #0078c4;
+}
+
+.service-modal-close-btn {
+  position: absolute;
+  top: 12px;
+  right: 15px;
+  background: transparent;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  color: #666;
+}
+
+.service-modal-close-btn:hover {
+  color: #333;
+}

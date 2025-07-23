@@ -90,6 +90,21 @@ const Navbar = () => {
                             </li>
                         )}
 
+                        {userRole === 'administrador' && (
+                            <li>
+                                <NavLink
+                                    to="/Servicio"
+                                    onClick={() => {
+                                        setMenuOpen(false);
+                                        addActiveClass();
+                                    }}
+                                    activeClassName="active"
+                                >
+                                    Servicios
+                                </NavLink>
+                            </li>
+                        )}
+
 
                         {(userRole === 'mecanico' || userRole === 'vendedor') && (
                             <li>

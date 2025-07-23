@@ -11,6 +11,8 @@ import '@styles/styles.css';
 import AddMarca from '@pages/AddMarca';
 import Inventario from '@pages/Inventario';
 
+import Servicios from '@pages/Servicio'; 
+
 
 const router = createBrowserRouter([
   {
@@ -40,14 +42,23 @@ const router = createBrowserRouter([
       )
     },
       
-      {
-        path: '/Inventario',
-        element: (
-          <ProtectedRoute allowedRoles={['administrador']}>
-            <Inventario />
-          </ProtectedRoute>
-        )
-      },
+    {
+      path: '/Inventario',
+      element: (
+        <ProtectedRoute allowedRoles={['administrador']}>
+          <Inventario />
+        </ProtectedRoute>
+      )
+    },
+
+    {
+      path: '/Servicio',
+      element: (
+        <ProtectedRoute allowedRoles={['administrador']}>
+          <Servicios />
+        </ProtectedRoute>
+      )
+    }
 
 
     ]

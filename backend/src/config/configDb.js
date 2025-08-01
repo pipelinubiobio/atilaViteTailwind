@@ -23,3 +23,26 @@ export async function connectDB() {
     process.exit(1);
   }
 }
+
+
+
+
+
+// .env file para docker
+/*
+
+
+PORT=3000
+
+HOST=localhost
+DB_PORT=5432
+DB_USERNAME=postgres
+PASSWORD=postgres1234
+DATABASE=atilabd
+
+ACCESS_TOKEN_SECRET=una_clave_super_secreta
+cookieKey=una_cookie_key_segura
+
+
+
+*/

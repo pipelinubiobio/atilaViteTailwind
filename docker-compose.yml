@@ -1,0 +1,63 @@
+version: '3.8'
+
+services:
+  # Base de datos PostgreSQL
+  postgres:
+    image: postgres:15-alpine
+    container_name: atila_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: atiladb
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres1234
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - app-network
+
+  # Backend API
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: atila_backend
+    restart: unless-stopped
+    depends_on:
+      - postgres
+    environment:
+      - NODE_ENV=development
+      - PORT=4000
+      - HOST=postgres
+      - DB_USERNAME=postgres
+      - PASSWORD=postgres1234
+      - DATABASE=atiladb
+    ports:
+      - "3000:3000"
+    networks:
+      - app-network
+
+  # Frontend React
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: atila_frontend
+    restart: unless-stopped
+    depends_on:
+      - backend
+    environment:
+      - VITE_BASE_URL=http://localhost:3000/api
+      # VITE_BASE_URL=http://146.83.194.168:4000/api para sv
+    ports:
+      - "5173:5173"
+    networks:
+      - app-network
+
+volumes:
+  postgres_data:
+
+networks:
+  app-network:
+    driver: bridge
